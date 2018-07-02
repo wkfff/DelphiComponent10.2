@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{89A3EB38-78F5-4E44-80BB-63E57E2FD1C8}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="KeyboardALDN2010.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="KeyboardALRT2010.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="KeyboardALDN2010">
+			<MSBuild Projects="KeyboardALDN2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALDN2010:Clean">
+			<MSBuild Targets="Clean" Projects="KeyboardALDN2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALDN2010:Make">
+			<MSBuild Targets="Make" Projects="KeyboardALDN2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALRT2010">
+			<MSBuild Projects="KeyboardALRT2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALRT2010:Clean">
+			<MSBuild Targets="Clean" Projects="KeyboardALRT2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALRT2010:Make">
+			<MSBuild Targets="Make" Projects="KeyboardALRT2010.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="KeyboardALDN2010;KeyboardALRT2010"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="KeyboardALDN2010:Clean;KeyboardALRT2010:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="KeyboardALDN2010:Make;KeyboardALRT2010:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

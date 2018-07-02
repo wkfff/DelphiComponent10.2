@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = TKeyboardExample.exe KeyboardDN7.bpl KeyboardRT7.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+TKeyboardExample.exe: ..\..\Example AlphaSkin\TKeyboardExample.dpr
+  $(DCC)
+
+KeyboardAlDN7.bpl: KeyboardAlDN7.dpk
+  $(DCC)
+
+KeyboardAlRT7.bpl: KeyboardAlRT7.dpk
+  $(DCC)
+
+

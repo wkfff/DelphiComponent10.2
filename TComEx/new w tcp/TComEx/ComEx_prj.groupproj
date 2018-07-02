@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BD825A08-DE26-4C40-ADEE-58C08DDA39D6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ComEx_prj.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\TestCom.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ComEx_prj">
+        <MSBuild Projects="ComEx_prj.dproj"/>
+    </Target>
+    <Target Name="ComEx_prj:Clean">
+        <MSBuild Projects="ComEx_prj.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ComEx_prj:Make">
+        <MSBuild Projects="ComEx_prj.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestCom">
+        <MSBuild Projects="Test\TestCom.dproj"/>
+    </Target>
+    <Target Name="TestCom:Clean">
+        <MSBuild Projects="Test\TestCom.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestCom:Make">
+        <MSBuild Projects="Test\TestCom.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ComEx_prj;TestCom"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ComEx_prj:Clean;TestCom:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ComEx_prj:Make;TestCom:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

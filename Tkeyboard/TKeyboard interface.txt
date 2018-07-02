@@ -1,0 +1,115 @@
+TKeyLevel = (klNormal, klShift, klAltGr);
+
+TKeyType = (ktNormal, ktShift, ktCapsLock, ktEscape, ktAltGr, ktEnter, KtTab,
+           ktBackspace, ktInsert, ktDelete, ktHome, ktEnd, ktPageUp, ktPageDown,
+           ktLeft, ktRight, ktUp, ktDown, ktFunction);
+
+TKeyValue = String;
+
+TKeyWidth = 1..10 * DEFAULT_KEY_WIDTH;
+
+TKeyHeight = 1..10 * DEFAULT_KEY_HEIGHT;
+
+TKeyLevelCaption = array[TKeyLevel] of String;
+
+TKeyLevelValue = array[TKeyLevel] of TKeyValue;
+
+TKey = class
+  public
+    // contruction / destruction
+    constructor Create(KeyType: TKeyType);
+    destructor Destroy; override;
+
+    // properties
+    property KeyCaption[Level: TKeyLevel]: String read GetKeyCaption write SetKeyCaption;
+    property KeyType: TKeyType read FKeyType write SetKeyType;
+    property KeyValue[Level: TKeyLevel]: TKeyValue read GetKeyValue write SetKeyValue;
+    property Top: Integer read FTop write SetTop;
+    property Left: Integer read FLeft write SetLeft;
+    property Width: TKeyWidth read FWidth write SetWidth;
+    property Height: TKeyHeight read FHeight write SetHeight;
+    property Enabled: Boolean read FEnabled write SetEnabled;
+    property Visible: Boolean read FVisible write SetVisible;
+    property Control: TKeyControl read FControl write FControl;
+    property Font: TFont read FFont write SetFont;
+
+    // methods
+    procedure AssignControl(Ctrl: TKeyControl);
+    procedure UpdateControl;
+  end;
+
+  TKeyControl = class(TSpeedButton)
+  public
+    Key: TKey;
+  end;
+
+TKeyCollection = class(TPersistent)
+  public
+    // properties
+    property Items[n: Integer]: TKey read GetItem; default;
+    property Count: Integer read GetCount;
+
+    // construction, destruction
+    constructor Create;
+    destructor Destroy; override;
+
+    // persistency
+    procedure SaveToFile(FileName: String);
+    procedure LoadFromFile(FileName: String);
+
+    // manipulation
+    procedure AddKey(Key: TKey);
+    procedure DeleteKey(Key: TKey); overload;
+    procedure DeleteKey(i: Integer); overload;
+    procedure DeleteAndFreeKey(Key: TKey); overload;
+    procedure DeleteAndFreeKey(i: Integer); overload;
+    procedure DeleteAllKeys;
+  end;
+
+TKeyboard = class(TCustomPanel)
+  public
+    // construction destruction
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+
+    // screen display
+    procedure ReCreateKeys;
+    procedure ResizeKeyboard;
+
+    // layout control
+    procedure LoadKeyLayout(FileName: String);
+    procedure SaveKeyLayout(FileName: String);
+
+    // key access
+    function SearchKey(KeyCaption: String; KeyLevel: TKeyLevel): TKey; overload;
+    function SearchKey(KeyLevel: TKeyLevel; KeyValue: TKeyValue): TKey; overload;
+    function SearchKey(KeyType: TKeyType; KeyCaption: String; KeyLevel: TKeyLevel): TKey; overload;
+
+  published
+    // publish some useful properties of TCustomPanel
+    property BevelOuter;
+    property BevelInner;
+    property BevelWidth;
+    property BorderStyle;
+    property BorderWidth;
+    property Color;
+    property Enabled;
+
+    // new properties
+    property CharCase: TEditCharCase read FCharCase write FCharCase default ecNormal;
+    property BeepOnKeyPressed: Boolean read FBeep write FBeep default False;
+    property LinkedControl: TWinControl read FLinkedControl write SetLinkedControl;
+    property HighlightColor: TColor read FHighlightColor write FHighlightColor;
+    property ShiftState: Boolean read m_bShiftState;
+    property CapsState: Boolean read m_bCapsState;
+    property AltGrState: Boolean read m_bAltGrState;
+    property KeyLevel: TKeyLevel read GetKeyLevel;
+    property Keys: TKeyCollection read GetKeys write SetKeys;
+
+    // event properties
+    property OnKey: TKeyEvent read FOnKey write FOnKey;
+    property OnShiftStateChange: TShiftStateChange read FOnShiftStateChange write FOnShiftStateChange;
+    property OnCapsStateChange: TCapsStateChange read FOnCapsStateChange write FOnCapsStateChange;
+    property OnAltGrStateChange: TAltGrStateChange read FOnAltGrStateChange write FOnAltGrStateChange;
+  end;
+

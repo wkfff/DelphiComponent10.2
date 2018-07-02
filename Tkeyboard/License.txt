@@ -1,0 +1,31 @@
+
+TKEYBOARD LICENSE
+
+This SINGLE developer license grants you the right to install and use TKeyboard on
+one computer within your organisation to develop applications for private and/or
+commercial use.
+
+TKeyboard design time packages as well as source and object code in any form
+(including but not limited to .PAS, .DCU, .OBJ), in whole or in part, modified or
+unmodified, may not be redistributed for profit or as part of another commercial
+or shareware software package without express written permission from the author.
+TKeyboard may not be used to develop a commercially competitive product.
+
+As a registered user you are allowed to deploy the following files as part of
+your software:
+
+KeyboardRT7.bpl
+KeyboardRT6.bpl
+KeyboardRT5.bpl
+
+No other files may be deployed.
+
+
+	
+	Martin Geier
+	martin.geier@sarix.biz
+	http://www.sarix.biz/tkeyboard
+
+
+
+

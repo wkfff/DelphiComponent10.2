@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A0DF55BB-A985-43EA-9F4F-FC4336964585}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="KeyboardALRTXE102.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="KeyboardALDNXE102.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="KeyboardALRTXE102">
+        <MSBuild Projects="KeyboardALRTXE102.dproj"/>
+    </Target>
+    <Target Name="KeyboardALRTXE102:Clean">
+        <MSBuild Projects="KeyboardALRTXE102.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KeyboardALRTXE102:Make">
+        <MSBuild Projects="KeyboardALRTXE102.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="KeyboardALDNXE102">
+        <MSBuild Projects="KeyboardALDNXE102.dproj"/>
+    </Target>
+    <Target Name="KeyboardALDNXE102:Clean">
+        <MSBuild Projects="KeyboardALDNXE102.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KeyboardALDNXE102:Make">
+        <MSBuild Projects="KeyboardALDNXE102.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="KeyboardALRTXE102;KeyboardALDNXE102"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="KeyboardALRTXE102:Clean;KeyboardALDNXE102:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="KeyboardALRTXE102:Make;KeyboardALDNXE102:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

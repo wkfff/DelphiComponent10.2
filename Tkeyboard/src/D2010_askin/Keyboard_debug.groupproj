@@ -1,0 +1,60 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{8112D9E7-8803-4531-9782-6BEA9E230541}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="..\..\Example AlphaSkin\TKeyboardExample.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="KeyboardALDN2010.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="KeyboardALRT2010.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="TKeyboardExample">
+			<MSBuild Projects="..\..\Example AlphaSkin\TKeyboardExample.dproj"/>
+		</Target>
+		<Target Name="TKeyboardExample:Clean">
+			<MSBuild Targets="Clean" Projects="..\..\Example AlphaSkin\TKeyboardExample.dproj"/>
+		</Target>
+		<Target Name="TKeyboardExample:Make">
+			<MSBuild Targets="Make" Projects="..\..\Example AlphaSkin\TKeyboardExample.dproj"/>
+		</Target>
+		<Target Name="KeyboardALDN2010">
+			<MSBuild Projects="KeyboardALDN2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALDN2010:Clean">
+			<MSBuild Targets="Clean" Projects="KeyboardALDN2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALDN2010:Make">
+			<MSBuild Targets="Make" Projects="KeyboardALDN2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALRT2010">
+			<MSBuild Projects="KeyboardALRT2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALRT2010:Clean">
+			<MSBuild Targets="Clean" Projects="KeyboardALRT2010.dproj"/>
+		</Target>
+		<Target Name="KeyboardALRT2010:Make">
+			<MSBuild Targets="Make" Projects="KeyboardALRT2010.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="TKeyboardExample;KeyboardALDN2010;KeyboardALRT2010"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="TKeyboardExample:Clean;KeyboardALDN2010:Clean;KeyboardALRT2010:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="TKeyboardExample:Make;KeyboardALDN2010:Make;KeyboardALRT2010:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
