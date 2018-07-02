@@ -1,0 +1,16 @@
+The help file of the i18n Package (i18n.chm) is generated using "Doc-O-Matic Express", which is a free
+software. Besides my grammatical and spelling mistakes, the following problems are also part of the help 
+file:
+
+   1. You will see some broken links or part of XML markups in the help file. Seems "Doc-O-Matic Express" 
+      does not like cross file referencing, and even sometimes mess up with in file references.
+
+   2. In the help pages of units you will see some undocumented items. Those items are in the implementation 
+      clause of the unit and are not visible. However, "Doc-O-Matic Express" insists to include them in the 
+      help. Apparently the commercial version of Doc-O-Matic has an option to turn this annoying feature off. 
+
+   3. Although the class constants appear as the member of their class, but "Doc-O-Matic Express" does not 
+      show their documentation. You need to refer to the source code to see the comments.
+
+
+Thank you!

@@ -1,0 +1,69 @@
+<HTML>
+	<HEAD>
+		<TITLE>SmartCode ViewerX Control Sample</TITLE>
+		<script language="Javascript" type="text/javascript">;
+			function OnConnect() {
+				window.ViewerX.Disconnect()
+				window.ViewerX.HostIP = document.Demo.Address.value
+				window.ViewerX.Port = document.Demo.Port.value
+				window.ViewerX.Connect()
+			}
+			function OnDisconnect() {
+				window.ViewerX.Disconnect()
+			}
+		</script>
+	</HEAD>
+	<BODY>
+		<h2 align="center">SmartCode ViewerX Control Sample</h2>
+		<p>
+			<OBJECT id="ViewerX" style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid"
+				height="328" width="662" classid="CLSID:62FA83F7-20EC-4D62-AC86-BAB705EE1CCD" VIEWASTEXT>
+				<PARAM NAME="HostIP" VALUE="">
+				<PARAM NAME="Port" VALUE="5900">
+				<PARAM NAME="Password" VALUE="">
+				<PARAM NAME="CustomCompression" VALUE="0">
+				<PARAM NAME="CustomCompressionLevel" VALUE="6">
+				<PARAM NAME="JPEGCompression" VALUE="1">
+				<PARAM NAME="JPEGCompressionLevel" VALUE="6">
+				<PARAM NAME="CopyRect" VALUE="1">
+				<PARAM NAME="EmulateThreeButton" VALUE="1">
+				<PARAM NAME="SwapMouseButtons" VALUE="0">
+				<PARAM NAME="Encoding" VALUE="7">
+				<PARAM NAME="ViewOnly" VALUE="0">
+				<PARAM NAME="RestrictPixel" VALUE="0">
+				<PARAM NAME="ScaleNum" VALUE="1">
+				<PARAM NAME="ScaleDen" VALUE="1">
+				<PARAM NAME="ScaleEnable" VALUE="0">
+				<PARAM NAME="FullScreen" VALUE="0">
+				<PARAM NAME="LocalCursor" VALUE="1">
+				<PARAM NAME="MessageBoxes" VALUE="1">
+				<PARAM NAME="DisableClipboard" VALUE="0">
+				<PARAM NAME="ThumbnailMode" VALUE="0">
+				<PARAM NAME="LoginType" VALUE="0">
+				<PARAM NAME="MsUser" VALUE="">
+				<PARAM NAME="MsDomain" VALUE="">
+				<PARAM NAME="MsPassword" VALUE="">
+				<PARAM NAME="ProxyIP" VALUE="">
+				<PARAM NAME="ProxyPort" VALUE="-1">
+				<PARAM NAME="ProxyUser" VALUE="">
+				<PARAM NAME="ProxyPassword" VALUE="">
+				<PARAM NAME="ProxyType" VALUE="0">
+				<PARAM NAME="ConnectionBar" VALUE="0">
+				<PARAM NAME="StretchMode" VALUE="0">
+			</OBJECT>
+		</p>
+		<form name="Demo">
+			<table id="table1" width="100%" border="0">
+				<tr>
+					<td>Server address:</td>
+					<td width="80%"><input id="Address" type="text" size="32"></td>
+				</tr>
+				<tr>
+					<td>Server port:</td>
+					<td width="80%"><input id="Port" type="text" size="10" value="5900"></td>
+				</tr>
+			</table>
+			<p><input onclick="OnConnect()" type="button" value="Connect"> &nbsp; <input onclick="OnDisconnect()" type="button" value="Disconnect"></p>
+		</form>
+	</BODY>
+</HTML>

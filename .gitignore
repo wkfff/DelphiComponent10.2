@@ -1,1 +1,12 @@
 *.dcu
++*.optset
+*.local
+*.identcache
+*.txvpck
+*.~*
+backup/
+lib/
+__history/
+Release/
+Debug/
+*.stat

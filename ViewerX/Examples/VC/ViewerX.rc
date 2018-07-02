@@ -1,0 +1,242 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ViewerX.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ViewerX.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIEWERX_DIALOG DIALOGEX 0, 0, 410, 308
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SmartCode ViewerX ActiveX Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Connect to",IDC_STATIC,7,240,174,61
+    LTEXT           "Server &address:",IDC_STATIC,14,255,56,8
+    EDITTEXT        IDC_IP,78,253,97,12,ES_AUTOHSCROLL
+    LTEXT           "Server &port:",IDC_STATIC,15,270,56,8
+    EDITTEXT        IDC_PORT,78,269,48,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,123,266,11,14
+    LTEXT           "S&creen stretching",IDC_STATIC,16,287,62,8
+    COMBOBOX        IDC_COMBO_STRETCH,78,284,48,49,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&Connect",IDOK,189,244,75,14
+    PUSHBUTTON      "Close",IDCANCEL,189,261,75,14
+    PUSHBUTTON      "Send Ctrl+Alt+Del",IDC_CAD_BUTTON,269,244,75,14,WS_DISABLED
+    PUSHBUTTON      "File Transfer",IDC_FT_BUTTON,269,261,75,14,WS_DISABLED
+    CONTROL         "",IDC_VIEWERX,"{62FA83F7-20EC-4D62-AC86-BAB705EE1CCD}",WS_TABSTOP,7,7,396,228
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,8
+ PRODUCTVERSION 1,0,0,8
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "SmartCode Solutions"
+            VALUE "FileDescription", "ViewerX MFC Application"
+            VALUE "FileVersion", "1.0.0.8"
+            VALUE "InternalName", "ViewerX"
+            VALUE "LegalCopyright", "Copyright © 2003-2012 SmartCode Solutions"
+            VALUE "OriginalFilename", "ViewerX.exe"
+            VALUE "ProductName", "ViewerX Application"
+            VALUE "ProductVersion", "1.0.0.8"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_VIEWERX_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 403
+        VERTGUIDE, 78
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 301
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIEWERX_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_STRETCH, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_STRETCH, 0x403, 5, 0
+0x7246, 0x6565, "\000" 
+    IDC_COMBO_STRETCH, 0x403, 7, 0
+0x7341, 0x6570, 0x7463, "\000" 
+    IDC_VIEWERX, 0x376, 566, 0
+0x000d, 0x0000, 0x0073, 0x0063, 0x0076, 0x0069, 0x0065, 0x0077, 0x0078, 
+0x006c, 0x0069, 0x0063, 0x006b, 0x0065, 0x0079, 0x0c00, 0x0000, 0x0008, 
+0x0002, 0x0000, 0x0000, 0x0003, 0x170c, 0x0000, 0x0008, 0x0002, 0x0000, 
+0x0000, 0x000b, 0xffff, 0x0003, 0x0006, 0x0000, 0x000b, 0xffff, 0x0003, 
+0x0006, 0x0000, 0x000b, 0xffff, 0x000b, 0xffff, 0x000b, 0x0000, 0x0003, 
+0x0010, 0x0000, 0x000b, 0x0000, 0x000b, 0x0000, 0x0003, 0x0064, 0x0000, 
+0x0003, 0x0064, 0x0000, 0x000b, 0x0000, 0x000b, 0x0000, 0x0003, 0x0001, 
+0x0000, 0x0003, 0xffff, 0xffff, 0x000b, 0x0000, 0x000b, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0008, 0x0002, 0x0000, 0x0000, 0x0008, 0x0002, 0x0000, 
+0x0000, 0x0008, 0x0002, 0x0000, 0x0000, 0x0008, 0x0002, 0x0000, 0x0000, 
+0x0003, 0xffff, 0xffff, 0x0008, 0x0002, 0x0000, 0x0000, 0x0008, 0x0002, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x157c, 0x0000, 0x0008, 0x0048, 0x0000, 0x0053, 
+0x006d, 0x0061, 0x0072, 0x0074, 0x0043, 0x006f, 0x0064, 0x0065, 0x0020, 
+0x0056, 0x004e, 0x0043, 0x0020, 0x0056, 0x0069, 0x0065, 0x0077, 0x0065, 
+0x0072, 0x0020, 0x002d, 0x0020, 0x0044, 0x0069, 0x0073, 0x0063, 0x006f, 
+0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0065, 0x0064, 0x0000, 0x0008, 
+0x005e, 0x0000, 0x0045, 0x0073, 0x0074, 0x0061, 0x0062, 0x006c, 0x0069, 
+0x0073, 0x0068, 0x0069, 0x006e, 0x0067, 0x0020, 0x0063, 0x006f, 0x006e, 
+0x006e, 0x0065, 0x0063, 0x0074, 0x0069, 0x006f, 0x006e, 0x0020, 0x0074, 
+0x006f, 0x0020, 0x0056, 0x004e, 0x0043, 0x0020, 0x0073, 0x0065, 0x0072, 
+0x0076, 0x0065, 0x0072, 0x0020, 0x0061, 0x0074, 0x0020, 0x0025, 0x0073, 
+0x002e, 0x002e, 0x002e, 0x0000, 0x0008, 0x0064, 0x0000, 0x004c, 0x0069, 
+0x0073, 0x0074, 0x0065, 0x006e, 0x0069, 0x006e, 0x0067, 0x0020, 0x0066, 
+0x006f, 0x0072, 0x0020, 0x0069, 0x006e, 0x0063, 0x006f, 0x006d, 0x0069, 
+0x006e, 0x0067, 0x0020, 0x0056, 0x004e, 0x0043, 0x0020, 0x0063, 0x006f, 
+0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0069, 0x006f, 0x006e, 0x0073, 
+0x0020, 0x006f, 0x006e, 0x0020, 0x0070, 0x006f, 0x0072, 0x0074, 0x0020, 
+0x0025, 0x0069, 0x0000, 0x000b, 0x0000, 0x000b, 0x0000, 0x0003, 0x0000, 
+0x0000, 0x0003, 0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0003, 0xabab, 
+0x00ab, 0x000b, 0xffff, 0x0003, 0x0000, 0x0000, 0x0003, 0x0002, 0x0000, 
+0x3d64, 0x0000, 0x2658, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_DISCONNECT          "&Disconnect"
+    IDS_CONNECT             "&Connect"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ViewerX.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
